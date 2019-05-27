@@ -24,4 +24,7 @@ yarn static # export to static html files
 
 ### API server
 
-I have used an existing server on local environment running on http://localhost:8000. Our api server has to handle authentication with Token stored in `token` cookies which is `httpOnly`.
+I have used an existing server on local environment running on http://localhost:8000. Our api server has to:
+
+- Handle authentication with Token stored in `token` cookies which is `httpOnly`.
+- Allow `Access-Control-Allow-Credentials` in request
