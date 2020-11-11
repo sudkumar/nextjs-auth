@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
-import { withAmp } from "next/amp";
 
-function About() {
+export default function About() {
   return (
     <div>
       <Head>
@@ -18,4 +17,6 @@ function About() {
   );
 }
 
-export default withAmp(About);
+export const config = {
+  amp: true,
+};

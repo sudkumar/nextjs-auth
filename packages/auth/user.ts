@@ -6,10 +6,10 @@ import { NextContext } from "next";
 export async function getUser(): Promise<Auth.IUser> {
   return xhr
     .get(`/me`)
-    .then(resp => {
+    .then((resp) => {
       return resp.data.data;
     })
-    .catch(e => {
+    .catch((e) => {
       return Promise.reject(e);
     });
 }
@@ -20,7 +20,7 @@ export async function getAuthInitialProps() {
     userData = await getUser();
   } catch (e) {}
   return {
-    user: userData
+    user: userData,
   };
 }
 
@@ -31,7 +31,7 @@ export async function redirectAuthenticated(ctx: NextContext) {
     redirectInGetInitialProps(ctx, "/");
   }
   return {
-    user
+    user,
   };
 }
 
@@ -46,7 +46,7 @@ export async function redirectGuest(ctx: NextContext) {
     redirectInGetInitialProps(ctx, "/login");
   }
   return {
-    user
+    user,
   };
 }
 

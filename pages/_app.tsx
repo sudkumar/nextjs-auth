@@ -1,4 +1,4 @@
-import NextApp, { Container } from "next/app";
+import NextApp from "next/app";
 import { bootstrapXHR } from "../packages/xhr";
 
 class App extends NextApp {
@@ -12,11 +12,7 @@ class App extends NextApp {
   }
   render() {
     const { Component, pageProps, ...otherProps } = this.props;
-    return (
-      <Container>
-        <Component {...otherProps} {...pageProps} />
-      </Container>
-    );
+    return <Component {...otherProps} {...pageProps} />;
   }
 }
 

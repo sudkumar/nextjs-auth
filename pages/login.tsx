@@ -42,6 +42,8 @@ export function LoginForm({ onSubmit }: { onSubmit: TOnSubmit }) {
           <input
             type="email"
             name="email"
+            id="email"
+            autoFocus
             placeholder="email@domain.com"
             required
             value={email}
@@ -55,6 +57,7 @@ export function LoginForm({ onSubmit }: { onSubmit: TOnSubmit }) {
             type="password"
             name="email"
             required
+            id="password"
             value={password}
             onChange={onChangePasssord}
           />

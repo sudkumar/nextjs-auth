@@ -26,11 +26,11 @@ const HotelList: NextComponentType<
       </div>
       <ol>
         {data &&
-          data.map(hotel => (
+          data.map((hotel) => (
             <li key={hotel.id}>
               <Link href={`/hotel?id=${hotel.id}`} as={`/hotel/${hotel.id}`}>
                 <a>
-                  {hotel.name} - {hotel.location.short_name}
+                  {hotel.name} - {hotel.stars} Stars
                 </a>
               </Link>
             </li>
@@ -44,7 +44,7 @@ HotelList.getInitialProps = async function getInitialProps() {
   const { data, meta } = await xhr.get("/hotels");
   return {
     data,
-    meta
+    meta,
   };
 };
 

@@ -24,7 +24,7 @@ const Hotel: NextComponentType<
             <title>{data.name}</title>
           </Head>
           <h2>{data.name}</h2>
-          <p>{data.location.short_name}</p>
+          <p>{data.stars} Stars</p>
         </>
       )}
     </>
@@ -32,11 +32,11 @@ const Hotel: NextComponentType<
 };
 
 Hotel.getInitialProps = async function getInitiaProps({
-  query
+  query,
 }: NextContext<Record<string, string>>) {
   const data = await xhr.show(query.id);
   return {
-    data
+    data,
   };
 };
 
